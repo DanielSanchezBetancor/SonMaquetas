@@ -1,10 +1,13 @@
-import Navbar from './navbar/Navbar';
+import Navbar from '../components/Navbar/Navbar';
+import NewNavbar from '../components/NewNavbar/NewNavbar';
 
 function Header() {
     return (
     <>
-        <div>Hola mundo desde el Header</div>
+    {/* Diseño 1 */}
         <Navbar />
+    {/* Diseño 2 */}
+        {/* <NewNavbar /> */}
     </>
     )
 }
