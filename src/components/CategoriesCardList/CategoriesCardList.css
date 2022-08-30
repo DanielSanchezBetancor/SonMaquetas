@@ -1,0 +1,44 @@
+/* .categories-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.card img {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    top: 50px;
+}
+.card__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background-color: lightgrey;
+    border-radius: 10%;
+    font-weight: 600;
+} */
+.categories-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.card img {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    top: 50px;
+}
+.card__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background-color: lightgrey;
+    border-radius: 10%;
+    font-weight: 600;
+}

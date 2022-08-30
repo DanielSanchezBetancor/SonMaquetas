@@ -1,0 +1,6 @@
+.card {
+    text-align: center;
+}
+.card__img {
+    object-fit: contain;
+}
