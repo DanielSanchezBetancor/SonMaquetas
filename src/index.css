@@ -9,3 +9,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.dflex-col-cent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
