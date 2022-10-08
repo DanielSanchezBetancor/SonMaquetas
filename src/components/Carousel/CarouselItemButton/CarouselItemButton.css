@@ -1,0 +1,13 @@
+/* Button declaration as deactive */
+.carousel__item__button {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    margin: 1rem;
+    opacity: 0.5;
+}
+/* Button active */
+.active {
+    background-color: #707070;
+}
