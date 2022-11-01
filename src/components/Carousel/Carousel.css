@@ -2,6 +2,7 @@
     background-color: #DCC8B0;
     padding: 1rem 0 4rem;
     position: relative;
+    border-radius: 15px;
 }
 .carouse__wrapper {
     position: relative;

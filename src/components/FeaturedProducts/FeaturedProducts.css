@@ -1,0 +1,20 @@
+.featured-products {
+    background-color: #DCC8B0;
+    padding: 1rem 0;
+    border-radius: 15px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.featured-products-list {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 5px;
+}
+.featured-products__more-categories {
+    text-align: center;
+}
+.featured-products__more-categories__link {
+    color: #A97B43;
+}

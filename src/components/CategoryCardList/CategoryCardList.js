@@ -23,6 +23,7 @@ function CategoryCardList() {
     }
     return (
         <section className="category-card-list">
+            <label className="labels">Catálogo</label>
             <div className="category-card-list__item-list">
                 {categoriesCardList}
             </div>
