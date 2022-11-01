@@ -1,18 +1,16 @@
 .category-card-list {
     padding: 1rem 0;
-    background-color: #DCC8B0;
+    background-color: #644422;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
-    border-left: 0;
-    border-right: 0;
+    border-radius: 15px;
     
 }
 .category-card-list__item-list {
     padding: 1rem 0;
     display: flex;
-    gap: 10px;
+    gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -27,7 +25,6 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    border: solid 1px black;
 }
 .category-card-list__item > img {
     position: absolute;
@@ -37,6 +34,7 @@
 }
 .category-card-list__more-categories {
     width: 90%;
+    text-align: center;
 }
 .category-card-list__more-categories__link {
     color: #4f97c0;
