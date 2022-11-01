@@ -1,14 +1,12 @@
+import "./CategoryCard.css";
 
-
-import './CategoryCard.css';
-
-function CategoryCard({ categoryImg, categoryName }) {
+function CategoryCard({ imgSrc, imgAlt, categoryName }) {
     return (
         <div className="card">
-            <img src={categoryImg} className="card__img"/>
-            <div className='card__title'>
-                <span>{categoryName}</span>
-            </div>
+            {/* <div className="card__img__wrapper"> */}
+                <img className="card__img" src={imgSrc} alt={imgAlt}></img>
+            {/* </div> */}
+            <label>{categoryName}</label>
         </div>
     );
 }
