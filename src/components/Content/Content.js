@@ -1,5 +1,4 @@
 import CategoryCardList from '../CategoryCardList/CategoryCardList';
-import AccessoriesGrid from '../AccessoriesGrid/AccessoriesGrid';
 import AddedValueCard from '../AddedValueCard/AddedValueCard';
 import HeroPage from '../HeroPage/HeroPage';
 /* Carousel images */
@@ -14,7 +13,6 @@ function Content() {
             <HeroPage />
             <CategoryCardList />
             <Carousel images={[PlanesImg, ShipImg, TrainImg]}/>
-            <AccessoriesGrid />
             <AddedValueCard />
         </>
     )
