@@ -17,4 +17,5 @@
 }
 .usually-products__more-categories__link {
   color: #a97b43;
+  cursor: pointer;
 }
