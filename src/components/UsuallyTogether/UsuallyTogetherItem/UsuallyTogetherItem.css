@@ -1,0 +1,41 @@
+.usually-products-item__container {
+  position: relative;
+}
+
+.usually-products-item__img1 {
+  position: absolute;
+}
+
+.usually-products-item__img2 {
+  position: absolute;
+}
+
+.usually-products-item {
+  display: flex;
+  gap: 5px;
+  background-color: #a97b43;
+  align-items: center;
+  border-radius: 15px;
+  padding: 0.5rem 0;
+}
+.usually-products-item__img {
+  margin-left: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.usually-products-item__information__title {
+  font-weight: 900;
+}
+.usually-products-item__img > img {
+  width: 100px;
+  height: 100px;
+}
+.usually-products-item__information {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+.even {
+  background-color: rgb(100, 68, 34, 0.8);
+}
