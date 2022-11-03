@@ -29,3 +29,26 @@ export function calculateFeatured(data) {
     );
     return featured;
 }
+export function calculatePacks(data) {
+    const packs = [];
+    for (let i = 0; i < data.products.length; i++) {
+        if (data.products[i].pack !== undefined) {
+            let normalizedPackNumber = parseFloat(data.products[i].pack);
+            let pos = "second_image";
+            let groupPrice = 0;
+            if (packs[normalizedPackNumber] === undefined) {
+                packs[normalizedPackNumber] = [];
+                pos = "first_image";
+            } else {
+                groupPrice = parseFloat(packs[normalizedPackNumber]["first_image"].groupPrice);
+            }
+            packs[normalizedPackNumber][pos] = {
+                images: data.products[i].images,
+                name: data.products[i].name,
+                groupDescription: data.products[i].description,
+                groupPrice: (parseFloat(data.products[i].price) + groupPrice)
+            };
+        }
+    }
+    return packs;
+}
