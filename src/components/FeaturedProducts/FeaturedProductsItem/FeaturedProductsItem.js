@@ -3,7 +3,7 @@ import './FeaturedProductsItem.css';
 
 function FeaturedProductsItem({isEven}) {
     return (
-        <div className={"featured-products-item " + ((isEven) ? ' even' : '')}>
+        <div className={"featured-products-item " + ((isEven) ? ' featured-even' : '')}>
             <div className="featured-products-item__img">
                 <img src={PlanesImg} />
             </div>
