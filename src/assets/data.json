@@ -1,0 +1,50 @@
+{
+	"categories": [{
+		"nombre": "uno",
+		"subcategorias": [
+			"uno uno"
+		],
+		"images": "https://picsum.photos/150/150",
+		"url": "google.com"
+	}, {
+		"nombre": "dos",
+		"subcategorias": [
+			"dos uno",
+			"dos dos"
+		],
+		"images": "https://picsum.photos/150/150",
+		"url": "google.com/2"
+	}],
+	"products": [{
+		"nombre": "item1",
+		"precio": "10€",
+		"descripcion": "Este es un barquito guay",
+		"images": "https://m.media-amazon.com/images/I/61PnZW9FOYL._AC_SL1000_.jpg",
+        "altImage": "Un bonito avion",
+		"url": "google.com/3",
+		"pack": "1"
+	}, {
+		"nombre": "LEGO Ford Mustang Shelby GT500",
+		"precio": "39,90€",
+		"descripcion": "Este coche de juguete retráctil de color verde y blanco con grandes ruedas y un alerón trasero levantado es un gran regalo de Navidad en 2022 para niños y adolescentes",
+		"images": "https://m.media-amazon.com/images/I/81RoR27XpBL._AC_SL1500_.jpg",
+		"url": "https://www.amazon.es/LEGO-42138-Technic-Realidad-Aumentada/dp/B09BNVS9RM/ref=sr_1_22?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=EV8R89PENIFO&keywords=maquetas&qid=1667422341&qu=eyJxc2MiOiI3LjYwIiwicXNhIjoiNy40MCIsInFzcCI6IjYuMDYifQ%3D%3D&sprefix=maqueta%2Caps%2C118&sr=8-22&th=1",
+		"featuredProduct": "1",
+		"pack": "2"
+	}, {
+		"nombre": "item3",
+		"precio": "75€",
+		"descripcion": "Este es un tren guay",
+		"images": "https://picsum.photos/150/150",
+		"url": "google.com/5",
+		"pack": "2"
+	}, {
+		"nombre": "item4",
+		"precio": "200€",
+		"descripcion": "Este es un destacado guay",
+		"images": "https://picsum.photos/200/200",
+		"url": "google.com/6",
+		"featuredProduct": "1",
+		"pack": "1"
+	}]
+}
