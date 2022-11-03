@@ -1,7 +1,6 @@
-import PlanesImg from "../../../assets/categories-plane.png";
 import "./UsuallyTogetherItem.css";
 
-function UsuallyTogetherItem({ isEven }) {
+function UsuallyTogetherItem({ isEven, imgSrcFirstProduct, imgSrcSecondProduct, nameFirstProduct, nameSecondProduct, groupDescription, groupPrice }) {
   return (
     <div
       className={
@@ -10,20 +9,20 @@ function UsuallyTogetherItem({ isEven }) {
       }
     >
       <div className="usually-products-item__img usually-products-item__img1">
-        <img src={PlanesImg} alt="itemPic" />
+        <img src={imgSrcFirstProduct} alt="itemPic" />
       </div>
       <div className="usually-products-item__img usually-products-item__img2">
-        <img src={PlanesImg} alt="itemPic" />
+        <img src={imgSrcSecondProduct} alt="itemPic" />
       </div>
       <div className="usually-products-item__information">
         <label className="usually-products-item__information__title">
-          Nombre del producto 1
+          {nameFirstProduct}
         </label>
         <label className="usually-products-item__information__title">
-          Nombre del producto 2
+          {nameSecondProduct}
         </label>
-        <label>Descripcion del pack</label>
-        <label>XXX€</label>
+        <label>{groupDescription}</label>
+        <label>{groupPrice}€</label>
       </div>
     </div>
   );
