@@ -1,12 +1,11 @@
-
-import Data from '../assets/data.json';
+import Data from "../assets/data.json";
 
 export function getData() {
     return Data;
 }
 /**
- * Extracts an array of randoms that won't repeat, based on a limit 
- * @param {int} limit Maximum amount of random integers 
+ * Extracts an array of randoms that won't repeat, based on a limit
+ * @param {int} limit Maximum amount of random integers
  * @returns {object} Array of randoms
  */
 export function calculateRandoms(limit, oldRandoms = []) {
@@ -23,4 +22,10 @@ export function calculateRandoms(limit, oldRandoms = []) {
         }
     }
     return randoms;
+}
+export function calculateFeatured(data) {
+    const featured = data.products.filter(
+        (product) => product.featuredProduct === "1"
+    );
+    return featured;
 }
