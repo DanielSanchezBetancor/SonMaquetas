@@ -125,7 +125,7 @@ function Navbar() {
                       alt="Arrow for menu items"
                     />
                     <label className="navbar__expanded__name">
-                      {category.nombre}
+                      {category.name}
                     </label>
                   </div>
                   <li>

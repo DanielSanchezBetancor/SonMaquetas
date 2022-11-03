@@ -90,7 +90,7 @@ export function calculateInformation(products, randoms) {
             <CarouselInformation
                 key={counter}
                 isActive={counter === 0}
-                name={products[randoms[counter]].nombre}
+                name={products[randoms[counter]].name}
                 description={products[randoms[counter]].descripcion}
             />
         );
