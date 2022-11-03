@@ -8,7 +8,6 @@ import "./Navbar.css";
 
 function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false);
-  //@TODO Esto iria por props mejor
 
   const data = getData();
   const categories = data.categories;
@@ -21,24 +20,19 @@ function Navbar() {
       !event.path[0].className.includes("navbar__menu-icon") &&
       isExpanded === true
     ) {
-      console.log("entro");
       openMenu();
     }
   };
 
   document.addEventListener("click", click);
 
-  function openMenu(customValue) {
+  function openMenu() {
     setIsExpanded(!isExpanded);
     const sections = document.querySelectorAll("section");
     if (sections.length > 0 && sections[0].classList.contains("hide")) {
       for (let i = 0; i < sections.length; i++) {
         sections[i].classList.remove("hide");
       }
-    } else {
-      /*       for (let i = 0; i < sections.length; i++) {
-        sections[i].classList.add("hide");
-      } */
     }
   }
   function openSubmenu(event, id) {
