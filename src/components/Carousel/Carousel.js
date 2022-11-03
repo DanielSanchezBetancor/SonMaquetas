@@ -39,7 +39,7 @@ function Carousel() {
                 {prices ? prices : ""}
             </div>
             <div className="carousel__wrapper">
-                <div className="carousel__information">
+                <div className="carousel__information-group ">
                     {information ? information : ""}
                 </div>
                 <img
