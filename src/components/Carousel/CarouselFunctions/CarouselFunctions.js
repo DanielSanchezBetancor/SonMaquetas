@@ -1,155 +1,112 @@
-/**
- * Checks and activates next slide
- * @param {object} currentImg Image that is active on the slider
- * @param {int} userScroll Position of the client scroll cursor
- * @param {int} heightNextSlide Current total height state
- * @param {int} currentSlide Slide counter state
- * @param {object} setCurrentSlide Sets slide counter state
- * @param {object} setHeightNextSlide Sets total height state
- */
-export function logicNextSlide(
-    currentImg,
-    userScroll,
-    heightNextSlide,
-    currentSlide,
-    setCurrentSlide,
-    setHeightNextSlide
-) {
-    //Getting active image params
-    const currentImgParams = calculateImageParams(currentImg);
-    //New slide will come after the full image (plus all height untill this point) is reached
-    const nextSlideHeight =
-        heightNextSlide +
-        currentImgParams["marginTop"] +
-        currentImgParams["clientHeight"];
-    //Trigger next slide when position is reached
-    if (userScroll > nextSlideHeight) {
-        //New height includes the margin bottom
-        activateNextSlider(
-            nextSlideHeight + currentImgParams["marginBottom"],
-            currentSlide,
-            setCurrentSlide,
-            setHeightNextSlide
-        );
+import CarouselImage from "../CarouselImage/CarouselImage";
+import CarouselInformation from "../CarouselInformation/CarouselInformation";
+import CarouselItemButton from "../CarouselItemButton/CarouselItemButton";
+
+const PRODUCT_LIMIT = 3;
+
+export function calculateSlide(scrollLeft, slideNumber, setSlideNumber) {
+    console.log(scrollLeft);
+    console.log(slideNumber);
+    //Total width determined by user width
+    const totalWidth = document.querySelector(".carousel__sliders").clientWidth;
+    //Adding a little space on right so it doesnt trigger so fast
+    const triggerNextSlideWidth = totalWidth * slideNumber;
+    console.log(triggerNextSlideWidth);
+    //Adding a little space on left so it doesnt trigger so fast
+    const triggerPreviousSlideWidth = totalWidth * (slideNumber - 1) - 50;
+    console.log(triggerPreviousSlideWidth);
+    if (scrollLeft >= triggerNextSlideWidth) {
+        console.log("triggerSlide 1");
+        triggerSlide(1, setSlideNumber, slideNumber);
+    }
+    //iPhones have a weird extra scroll that can trigger this function on the first slide like there was another behind
+    if (slideNumber > 1 && scrollLeft < triggerPreviousSlideWidth) {
+        console.log("triggerSlide 2");
+        triggerSlide(-1, setSlideNumber, slideNumber);
     }
 }
+function triggerSlide(counter, setSlideNumber, slideNumber) {
+    hideAndShowComponents(
+        ".carousel__information__wrapper",
+        "information-active",
+        counter,
+        slideNumber
+    );
+    hideAndShowComponents(
+        ".carousel__item__button",
+        "active",
+        counter,
+        slideNumber
+    );
+    hideAndShowComponents(".carousel__price", "price-active", counter, slideNumber);
+    setSlideNumber(slideNumber + counter);
+}
+function hideAndShowComponents(targetClassName, auxiliarClass, counter, slideNumber) {
+    //We setted slideNumber as 1, but for index we need 0
+    const correctIndex = slideNumber - 1;
+    //Selecting all components from the same class
+    const componentList = document.querySelectorAll(targetClassName);
+    //Removing auxiliar class name from active slide
+    componentList[correctIndex].classList.remove(auxiliarClass);
+    //Adding auxiliar class name for next/previous slide
+    componentList[correctIndex + counter].classList.add(auxiliarClass);
+}
 /**
- * Checks and activates previous slide
- * @param {object} currentImg Previous image that is active on the slider
- * @param {int} userScroll Position of the client scroll cursor
- * @param {int} heightNextSlide Current total height state
- * @param {int} currentSlide Slide counter state
- * @param {object} setCurrentSlide Sets slide counter state
- * @param {object} setHeightNextSlide Sets total height state
+ * Checks how many buttons should be on the carousel based on the limit set in this class
+ * @returns {object} Array of Item Buttons
  */
-export function logicPrevSlide(
-    prevImg,
-    userScroll,
-    heightNextSlide,
-    currentSlide,
-    setCurrentSlide,
-    setHeightNextSlide
-) {
-    //First slide will have not previous slide, it will come as undefined
-    if (prevImg === undefined) {
-        //Do nothing
-        return;
-    }
-    //Getting active image params
-    const prevImgParams = calculateImageParams(prevImg);
-    //Previous slide will come after the previous image top border is reached
-    const prevSlideHeight =
-        heightNextSlide -
-        (prevImgParams["clientHeight"] + prevImgParams["marginBottom"]);
-    //Trigger previous slide when position is reached
-    if (userScroll < prevSlideHeight) {
-        //New height includes the margin top
-        activePrevSlider(
-            prevSlideHeight - prevImgParams["marginTop"],
-            currentSlide,
-            setCurrentSlide,
-            setHeightNextSlide
+export function calculateButtons(setSlideNumber) {
+    let components = [];
+    let counter = 0;
+    while (counter < PRODUCT_LIMIT) {
+        components = components.concat(
+            <CarouselItemButton index={counter} isActive={counter === 0} setSlideNumber={setSlideNumber}/>
         );
+        counter++;
     }
+    return components;
+}
+export function calculatePrices(products, randoms) {
+    let components = [];
+    let counter = 0;
+    while (counter < PRODUCT_LIMIT) {
+        let className =
+            "carousel__price" + (counter === 0 ? " price-active" : "");
+        let key = "carousel__price__" + counter;
+        components = components.concat(
+            <div className={className} key={key}>
+                {products[randoms[counter]].precio}
+            </div>
+        );
+        counter++;
+    }
+    return components;
+}
+export function calculateInformation(products, randoms) {
+    let components = [];
+    let counter = 0;
+    while (counter < PRODUCT_LIMIT) {
+        components = components.concat(
+            <CarouselInformation
+                key={counter}
+                isActive={counter === 0}
+                name={products[randoms[counter]].name}
+                description={products[randoms[counter]].descripcion}
+            />
+        );
+        counter++;
+    }
+    return components;
+}
+export function calculateImages(products, randoms) {
+    let components = [];
+    let counter = 0;
+    while (counter < PRODUCT_LIMIT) {
+        components = components.concat(
+            <CarouselImage image={products[randoms[counter]].images} />
+        );
+        counter++;
+    }
+    return components;
 }
 /* Auxiliar functions */
-/**
- * Performs the actions needed to activate next slider
- * @param {int} imgHeight New total height
- * @param {int} currentSlide Slide counter state
- * @param {object} setCurrentSlide Sets slide counter state
- * @param {object} setHeightNextSlide Sets total height state
- */
-function activateNextSlider(
-    imgHeight,
-    currentSlide,
-    setCurrentSlide,
-    setHeightNextSlide
-) {
-    //Get buttons list
-    const buttons = document.getElementsByClassName("carousel__item__button");
-    //Get information list
-    const cardInformationTitle =
-        document.getElementsByClassName("carousel__item");
-    //Deactivate current button
-    buttons[currentSlide].classList = "carousel__item__button";
-    cardInformationTitle[currentSlide].classList =
-        "carousel__item dflex-col-cent";
-    //Activate next button
-    buttons[currentSlide + 1].classList = "carousel__item__button active";
-    cardInformationTitle[currentSlide + 1].classList =
-        "carousel__item dflex-col-cent show";
-    //Setting next slide counter
-    setCurrentSlide(currentSlide + 1);
-    //Setting new height to move slide
-    setHeightNextSlide(imgHeight);
-}
-/**
- * Performs the actions needed to activate previous slider
- * @param {int} imgHeight New total height
- * @param {int} currentSlide Slide counter state
- * @param {object} setCurrentSlide Sets slide counter state
- * @param {object} setHeightNextSlide Sets total height state
- */
-function activePrevSlider(
-    imgHeight,
-    currentSlide,
-    setCurrentSlide,
-    setHeightNextSlide
-) {
-    //Get buttons list
-    const buttons = document.getElementsByClassName("carousel__item__button");
-    const cardInformationTitle =
-        document.getElementsByClassName("carousel__item");
-    //Deactivate current button
-    buttons[currentSlide].classList = "carousel__item__button";
-    cardInformationTitle[currentSlide].classList =
-        "carousel__item dflex-col-cent";
-    //Activate next button
-    buttons[currentSlide - 1].classList = "carousel__item__button active";
-    cardInformationTitle[currentSlide - 1].classList =
-        "carousel__item dflex-col-cent show";
-    //Setting next slide counter
-    setCurrentSlide(currentSlide - 1);
-    //Setting new height to move slide
-    setHeightNextSlide(imgHeight);
-}
-/**
- * Calculates offset params (Margin top and bottom) and height from an image and returns the value
- * @param {object} img HTML Object with the image node
- * @returns {object} Array of height and offset params from the image
- */
-function calculateImageParams(img) {
-    const marginTop = parseInt(
-        window.getComputedStyle(img).getPropertyValue("margin-top")
-    );
-    const clientHeight = img.clientHeight;
-    const marginBottom = parseInt(
-        window.getComputedStyle(img).getPropertyValue("margin-bottom")
-    );
-    return {
-        marginTop: marginTop,
-        clientHeight: clientHeight,
-        marginBottom: marginBottom,
-    };
-}

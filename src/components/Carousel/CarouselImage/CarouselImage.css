@@ -1,30 +1,13 @@
-/* Image wrapper set to the total width of the screen*/
 .carousel__image {
-    width: 100vw;
-    margin: 450px 0 0;
+    width: 150px;
+    height: 150px;
+    margin-left: 50%;
+    margin-right: 10%;
+    filter: drop-shadow(0px 9px 4px rgba(0, 0, 0, 0.25));
 }
-/* Last child needs to have some more margin bottom to get to center off screen */
-.carousel__image:last-child {
-    width: 100vw;
-    margin: 500px 0 150px;
-}
-/* Image tag set to .carousel__image width */
 .carousel__image > img {
-    width: 100%;
-}
-@media (min-width: 600px) {
-    /* Setting new offset params */
-    .carousel__image {
-        margin: 50px 0 500px;
-        width: 100%;
-    }
-    /* Resetting last child */
-    .carousel__image:last-child {
-        margin: 150px 0 0;
-        width: 100%;
-    }
-    /* We need to control last image or it will always hide before finishing in the center of the slider */
-    .carousel__image > img:last-child {
-        max-height: 650px;
-    }
+    width: inherit;
+    height: inherit;
+    opacity: 0.9;
+    border-radius: 15px;
 }

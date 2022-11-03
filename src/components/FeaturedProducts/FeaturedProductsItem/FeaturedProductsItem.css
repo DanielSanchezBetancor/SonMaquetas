@@ -24,6 +24,6 @@
     gap: 1rem;
     text-align: center;
 }
-.even {
-    background-color: rgb(100, 68, 34, 0.8);
+.featured-even {
+    background-color: #DCC8B0;
 }

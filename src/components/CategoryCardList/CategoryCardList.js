@@ -1,24 +1,48 @@
 import { useState } from "react";
-import PlanesImg from "../../assets/categories-plane.png";
-
+import { getData } from "../../utils/Utils";
 import CategoryCardListItem from "./CategoryCardListItem/CategoryCardListItem";
 import "./CategoryCardList.css";
 
 function CategoryCardList() {
-    //Setting 4 images as default
-    const [categoriesCardList, setCategoriesCardList] = useState([
-        <CategoryCardListItem imgSrc={PlanesImg} />,
-        <CategoryCardListItem imgSrc={PlanesImg} />,
-        <CategoryCardListItem imgSrc={PlanesImg} />,
-        <CategoryCardListItem imgSrc={PlanesImg} />,
-    ]);
+    const DEFAULT_IMG_LIMIT = 4;
+    const [counter, setCounter] = useState(DEFAULT_IMG_LIMIT);
+    //Setting Card List state with defaults
+    const [categoriesCardList, setCategoriesCardList] = useState(setDefaults());
+    function setDefaults() {
+        const data = getData();
+        //Local variables
+        let components = [];
+        let imgQuantity = 0;
+        //Filling components untill limit reached
+        while (imgQuantity < DEFAULT_IMG_LIMIT) {
+            components = components.concat(
+                <CategoryCardListItem
+                    name={data.categories[imgQuantity].name}
+                    imgSrc={data.categories[imgQuantity].images}
+                />
+            );
+            imgQuantity++;
+        }
+        return components;
+    }
     function loadCategories() {
-        let newCategoriesCardList = categoriesCardList.concat(
-            <CategoryCardListItem imgSrc={PlanesImg} />
-        );
-        newCategoriesCardList = newCategoriesCardList.concat(
-            <CategoryCardListItem imgSrc={PlanesImg} />
-        );
+        //Setting 4 images as default
+        const data = getData();
+        let newQuantity = 2;
+        //React wont update this values untill next rerender so we will isolate them locally
+        let newCategoriesCardList = categoriesCardList;
+        let index = counter;
+        while (newQuantity > 0 && index < data.categories.length) {
+            newCategoriesCardList = newCategoriesCardList.concat(
+                <CategoryCardListItem
+                    name={data.categories[index].name}
+                    imgSrc={data.categories[index].images}
+                />
+            );
+            index++;
+            newQuantity--;
+        }
+        setCounter(index);
         setCategoriesCardList(newCategoriesCardList);
     }
     return (
@@ -30,7 +54,7 @@ function CategoryCardList() {
             <div className="category-card-list__more-categories">
                 <label
                     className="category-card-list__more-categories__link"
-                    onClick={loadCategories}
+                    onClick={() => loadCategories()}
                 >
                     Ver mas categorías
                 </label>
