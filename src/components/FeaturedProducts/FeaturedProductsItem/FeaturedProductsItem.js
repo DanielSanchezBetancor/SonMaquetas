@@ -1,18 +1,18 @@
 import PlanesImg from "../../../assets/categories-plane.png";
 import './FeaturedProductsItem.css';
 
-function FeaturedProductsItem({isEven}) {
+function FeaturedProductsItem({isEven, imgSrc, imgAlt, name, description, price}) {
     return (
         <div className={"featured-products-item " + ((isEven) ? ' featured-even' : '')}>
             <div className="featured-products-item__img">
-                <img src={PlanesImg} />
+                <img src={imgSrc} alt={imgAlt} />
             </div>
             <div className="featured-products-item__information">
                 <label className="featured-products-item__information__title">
-                    Producto destacado
+                    {name}
                 </label>
-                <label>Descripcion del producto desctacado mencionado</label>
-                <label>XXX€</label>
+                <label>{description}</label>
+                <label>{price}</label>
             </div>
         </div>
     );
