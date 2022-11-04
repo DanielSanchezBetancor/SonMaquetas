@@ -19,6 +19,7 @@ function CategoryCardList() {
                 <CategoryCardListItem
                     name={data.categories[imgQuantity].name}
                     imgSrc={data.categories[imgQuantity].images}
+                    idCategory={data.categories[imgQuantity].id}
                 />
             );
             imgQuantity++;
@@ -37,6 +38,7 @@ function CategoryCardList() {
                 <CategoryCardListItem
                     name={data.categories[index].name}
                     imgSrc={data.categories[index].images}
+                    idCategory={data.categories[index].id}
                 />
             );
             index++;
@@ -47,17 +49,17 @@ function CategoryCardList() {
     }
     return (
         <section className="category-card-list">
-            <label className="labels">Catálogo</label>
+            <p className="labels">Categorías</p>
             <div className="category-card-list__item-list">
                 {categoriesCardList}
             </div>
             <div className="category-card-list__more-categories">
-                <label
+                <p
                     className="category-card-list__more-categories__link"
                     onClick={() => loadCategories()}
                 >
                     Ver mas categorías
-                </label>
+                </p>
             </div>
         </section>
     );

@@ -1,34 +1,39 @@
 {
     "categories": [
         {
+            "id": "vehicles",
             "name": "Vehiculos",
+            "description": "Los mejores vehiculos para montar",
             "subcategorias": ["Coches", "Trenes", "Aviones", "Nautica"],
-            "images": "https://m.media-amazon.com/images/I/51i-bWaBEGS._AC_SL1000_.jpg",
-            "url": "google.com"
+            "images": "https://m.media-amazon.com/images/I/51i-bWaBEGS._AC_SL1000_.jpg"
         },
         {
+            "id": "arch",
             "name": "Arquitectura",
+            "description": "Construye la casa de tus sueños",
             "subcategorias": ["Casas", "Monumentos", "Accesorios"],
-            "images": "https://m.media-amazon.com/images/I/51Tb96ytJEL._AC_.jpg",
-            "url": "google.com/2"
+            "images": "https://m.media-amazon.com/images/I/51Tb96ytJEL._AC_.jpg"
         },
         {
+            "id": "period",
             "name": "Épocas",
+            "description": "Revive el pasado o imagina como será el futuro",
             "subcategorias": ["Moderno", "Retro"],
-            "images": "https://m.media-amazon.com/images/I/812GOGtqZ1L._AC_SL1500_.jpg",
-            "url": "google.com/3"
+            "images": "https://m.media-amazon.com/images/I/812GOGtqZ1L._AC_SL1500_.jpg"
         },
         {
+            "id": "scifi",
             "name": "Sci-Fi",
+            "description": "Imaginación sin límites. Universos por explorar",
             "subcategorias": ["Sci-Fi"],
-            "images": "https://m.media-amazon.com/images/I/713rgBjK-JL._AC_SL1500_.jpg",
-            "url": "google.com/4"
+            "images": "https://m.media-amazon.com/images/I/713rgBjK-JL._AC_SL1500_.jpg"
         },
         {
+            "id": "accs",
             "name": "Accesorios",
+            "description": "Materiales perfectos para la obra de tus sueños",
             "subcategorias": ["Accesorios"],
-            "images": "https://m.media-amazon.com/images/I/71xaLZplXJL._AC_SL1500_.jpg",
-            "url": "google.com/5"
+            "images": "https://m.media-amazon.com/images/I/71xaLZplXJL._AC_SL1500_.jpg"
         }
     ],
     "products": [
@@ -39,8 +44,8 @@
             "images": "https://m.media-amazon.com/images/I/41Is1Tob9-L.jpg",
             "altImage": "Modelo de plastico: Gundam Legilis Memory of Eden",
             "url": "https://www.amazon.es/calidad-144-Gundam-legilis-memoria-limitada/dp/B00EZV05IC/ref=sr_1_12?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3IH32XP5HWFSD&keywords=modelaje&qid=1667478987&qu=eyJxc2MiOiIzLjIzIiwicXNhIjoiMi4yNSIsInFzcCI6IjAuOTIifQ%3D%3D&sprefix=modelaj%2Caps%2C101&sr=8-12",
-            "pack": "1",
-            "featuredProduct": "1"
+            "featuredProduct": "1",
+            "category": "scifi"
         },
         {
             "name": "LEGO Ford Mustang Shelby GT500",
@@ -49,25 +54,18 @@
             "images": "https://m.media-amazon.com/images/I/81RoR27XpBL._AC_SL1500_.jpg",
             "url": "https://www.amazon.es/LEGO-42138-Technic-Realidad-Aumentada/dp/B09BNVS9RM/ref=sr_1_22?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=EV8R89PENIFO&keywords=maquetas&qid=1667422341&qu=eyJxc2MiOiI3LjYwIiwicXNhIjoiNy40MCIsInFzcCI6IjYuMDYifQ%3D%3D&sprefix=maqueta%2Caps%2C118&sr=8-22&th=1",
             "featuredProduct": "1",
-            "pack": "2"
+            "pack": "2",
+            "category": "vehicles"
         },
         {
-            "name": "item3",
-            "price": "75",
-            "description": "Este es un tren guay",
-            "images": "https://picsum.photos/150/150",
-            "url": "google.com/5",
+            "name": "SUPVOX Accesorios de Modelado de Herramientas de Esculpir",
+            "price": "19,99",
+            "description": "Alta calidad para un uso duradero y duradero.",
+            "images": "https://m.media-amazon.com/images/I/61dcbwBShkL._AC_SL1004_.jpg",
+            "url": "https://www.amazon.es/SUPVOX-Accesorios-Modelado-Herramientas-Inoxidable/dp/B07X7KCWP2/ref=sr_1_9?crid=36E0Z544WI19F&keywords=modelaje&qid=1667561676&qu=eyJxc2MiOiIzLjIzIiwicXNhIjoiMi4yNSIsInFzcCI6IjAuOTIifQ%3D%3D&refinements=p_72%3A831280031&rnid=831271031&sprefix=%2Caps%2C93&sr=8-9",
             "featuredProduct": "1",
-            "pack": "2"
-        },
-        {
-            "name": "item4",
-            "price": "200",
-            "description": "Este es un destacado guay",
-            "images": "https://picsum.photos/200/200",
-            "url": "google.com/6",
-            "featuredProduct": "1",
-            "pack": "1"
+            "pack": "2",
+            "category": "accs"
         },
         {
             "name": "LEADSTAR Herramientas de Arcilla, 38pc",
@@ -75,7 +73,19 @@
             "description": "Estas herramientas de talla y escultura están en diferentes tamaños y formas, brindan una variedad de funciones para la creación artística. Adecuado tanto para diseñadores profesionales de arcilla como para principiantes.",
             "images": "https://m.media-amazon.com/images/I/71BbRa4yFoL._AC_SL1500_.jpg",
             "featuredProduct": "1",
-            "url": "https://www.amazon.es/LEADSTAR-Herramientas-Escultura-Principiantes-Profesional/dp/B08L62W53Y/ref=sr_1_30?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3IH32XP5HWFSD&keywords=modelaje&qid=1667478987&qu=eyJxc2MiOiIzLjIzIiwicXNhIjoiMi4yNSIsInFzcCI6IjAuOTIifQ%3D%3D&sprefix=modelaj%2Caps%2C101&sr=8-30"
+            "url": "https://www.amazon.es/LEADSTAR-Herramientas-Escultura-Principiantes-Profesional/dp/B08L62W53Y/ref=sr_1_30?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3IH32XP5HWFSD&keywords=modelaje&qid=1667478987&qu=eyJxc2MiOiIzLjIzIiwicXNhIjoiMi4yNSIsInFzcCI6IjAuOTIifQ%3D%3D&sprefix=modelaj%2Caps%2C101&sr=8-30",
+            "category": "accs",
+            "pack": "1"
+        },
+        {
+            "name": "MENG-Model - Maqueta de Tanque Escala 1:35",
+            "price": "57,34",
+            "description": "US M2a3 Bradley w/Busk II IFV con interior completo. Escala: 1:35.",
+            "images": "https://m.media-amazon.com/images/I/712Tg+E9U9L._AC_SL1500_.jpg",
+            "altImage": "US M2a3 Bradley w/Busk II IFV con interior completo. Escala: 1:35.",
+            "url": "https://www.amazon.es/MENG-Model-Maqueta-tanque-escala-35/dp/B00HI6EHZ8/ref=sr_1_5?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=33LH4JCLAUJN9&keywords=modelo+tanque&qid=1667561849&qu=eyJxc2MiOiIwLjY0IiwicXNhIjoiMC4wMCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=modelo+tanqu%2Caps%2C93&sr=8-5",
+            "category": "vehicles",
+            "pack": "1"
         },
         {
             "name": "Timbertech Kit de aerógrafo con compresor de aire",
@@ -83,7 +93,8 @@
             "description": "Potente presión de trabajo y fuerte flujo de aire, inicio automático (3 bar), parada automática (4 bar), flujo de aire 20-23 l/min",
             "images": "https://m.media-amazon.com/images/I/61EL-o7ZAZL._AC_SL1000_.jpg",
             "featuredProduct": "1",
-            "url": "https://www.amazon.es/Timbertech-ABPST05-aer%C3%B3grafo-compresor-pistola/dp/B00LO4PKY2/ref=sr_1_8?keywords=compresor+aerografo&qid=1667513398&qu=eyJxc2MiOiI1LjYxIiwicXNhIjoiNC45NSIsInFzcCI6IjQuMjUifQ%3D%3D&sprefix=compresor+aer%2Caps%2C88&sr=8-8"
+            "url": "https://www.amazon.es/Timbertech-ABPST05-aer%C3%B3grafo-compresor-pistola/dp/B00LO4PKY2/ref=sr_1_8?keywords=compresor+aerografo&qid=1667513398&qu=eyJxc2MiOiI1LjYxIiwicXNhIjoiNC45NSIsInFzcCI6IjQuMjUifQ%3D%3D&sprefix=compresor+aer%2Caps%2C88&sr=8-8",
+            "category": "accs"
         }
     ]
 }
