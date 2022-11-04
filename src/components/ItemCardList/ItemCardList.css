@@ -1,0 +1,27 @@
+.category__product {
+    padding: 1rem 0;
+    background-color: #644422;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px 15px 0 0 ;
+}
+.category__product__list {
+    padding: 1rem 0;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category__product__more-products {
+    width: 90%;
+    text-align: center;
+}
+.category__product__more-products__link {
+    color: #A97B43;
+    text-decoration: underline;
+}
+.category__product__more-products__link:hover {
+    cursor: pointer;
+}

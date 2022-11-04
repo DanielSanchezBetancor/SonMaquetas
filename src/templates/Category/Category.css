@@ -1,0 +1,16 @@
+.category {
+    background-color: rgb(220, 200, 176, 0.5);
+    text-align: center;
+}
+.category__header {
+    font-size: 48px;
+    padding: 2rem 0;
+    text-transform: uppercase;
+}
+.category__description {
+    font-size: 36px;
+    padding: 0 0 2rem;
+}
+.category__product-list {
+    width: 100%;
+}
