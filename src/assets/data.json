@@ -44,7 +44,6 @@
             "images": "https://m.media-amazon.com/images/I/41Is1Tob9-L.jpg",
             "altImage": "Modelo de plastico: Gundam Legilis Memory of Eden",
             "url": "https://www.amazon.es/calidad-144-Gundam-legilis-memoria-limitada/dp/B00EZV05IC/ref=sr_1_12?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3IH32XP5HWFSD&keywords=modelaje&qid=1667478987&qu=eyJxc2MiOiIzLjIzIiwicXNhIjoiMi4yNSIsInFzcCI6IjAuOTIifQ%3D%3D&sprefix=modelaj%2Caps%2C101&sr=8-12",
-            "pack": "1",
             "featuredProduct": "1",
             "category": "scifi"
         },
@@ -75,7 +74,8 @@
             "images": "https://m.media-amazon.com/images/I/71BbRa4yFoL._AC_SL1500_.jpg",
             "featuredProduct": "1",
             "url": "https://www.amazon.es/LEADSTAR-Herramientas-Escultura-Principiantes-Profesional/dp/B08L62W53Y/ref=sr_1_30?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3IH32XP5HWFSD&keywords=modelaje&qid=1667478987&qu=eyJxc2MiOiIzLjIzIiwicXNhIjoiMi4yNSIsInFzcCI6IjAuOTIifQ%3D%3D&sprefix=modelaj%2Caps%2C101&sr=8-30",
-            "category": "accs"
+            "category": "accs",
+            "pack": "1"
         },
         {
             "name": "MENG-Model - Maqueta de Tanque Escala 1:35",
@@ -84,7 +84,8 @@
             "images": "https://m.media-amazon.com/images/I/712Tg+E9U9L._AC_SL1500_.jpg",
             "altImage": "US M2a3 Bradley w/Busk II IFV con interior completo. Escala: 1:35.",
             "url": "https://www.amazon.es/MENG-Model-Maqueta-tanque-escala-35/dp/B00HI6EHZ8/ref=sr_1_5?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=33LH4JCLAUJN9&keywords=modelo+tanque&qid=1667561849&qu=eyJxc2MiOiIwLjY0IiwicXNhIjoiMC4wMCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=modelo+tanqu%2Caps%2C93&sr=8-5",
-            "category": "vehicles"
+            "category": "vehicles",
+            "pack": "1"
         },
         {
             "name": "Timbertech Kit de aerógrafo con compresor de aire",
