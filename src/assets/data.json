@@ -34,17 +34,18 @@
     "products": [
         {
             "name": "Gundam Legilis Memory of Eden - Kit de modelaje HG",
-            "precio": "46,55€",
-            "descripcion": "Modelo de plástico dimensionalizado de trajes móviles que aparece en la serie de 'Mobile Suit Gundam'",
+            "price": "46,55",
+            "description": "Modelo de plástico dimensionalizado de trajes móviles que aparece en la serie de 'Mobile Suit Gundam'",
             "images": "https://m.media-amazon.com/images/I/41Is1Tob9-L.jpg",
             "altImage": "Modelo de plastico: Gundam Legilis Memory of Eden",
             "url": "https://www.amazon.es/calidad-144-Gundam-legilis-memoria-limitada/dp/B00EZV05IC/ref=sr_1_12?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3IH32XP5HWFSD&keywords=modelaje&qid=1667478987&qu=eyJxc2MiOiIzLjIzIiwicXNhIjoiMi4yNSIsInFzcCI6IjAuOTIifQ%3D%3D&sprefix=modelaj%2Caps%2C101&sr=8-12",
-            "pack": "1"
+            "pack": "1",
+            "featuredProduct": "1"
         },
         {
             "name": "LEGO Ford Mustang Shelby GT500",
-            "precio": "39,90€",
-            "descripcion": "Este coche de juguete retráctil de color verde y blanco con grandes ruedas y un alerón trasero levantado es un gran regalo de Navidad en 2022 para niños y adolescentes",
+            "price": "39,90",
+            "description": "Este coche de juguete retráctil de color verde y blanco con grandes ruedas y un alerón trasero levantado es un gran regalo de Navidad en 2022 para niños y adolescentes",
             "images": "https://m.media-amazon.com/images/I/81RoR27XpBL._AC_SL1500_.jpg",
             "url": "https://www.amazon.es/LEGO-42138-Technic-Realidad-Aumentada/dp/B09BNVS9RM/ref=sr_1_22?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=EV8R89PENIFO&keywords=maquetas&qid=1667422341&qu=eyJxc2MiOiI3LjYwIiwicXNhIjoiNy40MCIsInFzcCI6IjYuMDYifQ%3D%3D&sprefix=maqueta%2Caps%2C118&sr=8-22&th=1",
             "featuredProduct": "1",
@@ -52,16 +53,17 @@
         },
         {
             "name": "item3",
-            "precio": "75€",
-            "descripcion": "Este es un tren guay",
+            "price": "75",
+            "description": "Este es un tren guay",
             "images": "https://picsum.photos/150/150",
             "url": "google.com/5",
+            "featuredProduct": "1",
             "pack": "2"
         },
         {
             "name": "item4",
-            "precio": "200€",
-            "descripcion": "Este es un destacado guay",
+            "price": "200",
+            "description": "Este es un destacado guay",
             "images": "https://picsum.photos/200/200",
             "url": "google.com/6",
             "featuredProduct": "1",
@@ -69,10 +71,19 @@
         },
         {
             "name": "LEADSTAR Herramientas de Arcilla, 38pc",
-            "precio": "21,99€",
-            "descripcion": " Estas herramientas de talla y escultura están en diferentes tamaños y formas, brindan una variedad de funciones para la creación artística. Adecuado tanto para diseñadores profesionales de arcilla como para principiantes.",
+            "price": "21,99",
+            "description": "Estas herramientas de talla y escultura están en diferentes tamaños y formas, brindan una variedad de funciones para la creación artística. Adecuado tanto para diseñadores profesionales de arcilla como para principiantes.",
             "images": "https://m.media-amazon.com/images/I/71BbRa4yFoL._AC_SL1500_.jpg",
+            "featuredProduct": "1",
             "url": "https://www.amazon.es/LEADSTAR-Herramientas-Escultura-Principiantes-Profesional/dp/B08L62W53Y/ref=sr_1_30?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3IH32XP5HWFSD&keywords=modelaje&qid=1667478987&qu=eyJxc2MiOiIzLjIzIiwicXNhIjoiMi4yNSIsInFzcCI6IjAuOTIifQ%3D%3D&sprefix=modelaj%2Caps%2C101&sr=8-30"
+        },
+        {
+            "name": "Timbertech Kit de aerógrafo con compresor de aire",
+            "price": "78,95",
+            "description": "Potente presión de trabajo y fuerte flujo de aire, inicio automático (3 bar), parada automática (4 bar), flujo de aire 20-23 l/min",
+            "images": "https://m.media-amazon.com/images/I/61EL-o7ZAZL._AC_SL1000_.jpg",
+            "featuredProduct": "1",
+            "url": "https://www.amazon.es/Timbertech-ABPST05-aer%C3%B3grafo-compresor-pistola/dp/B00LO4PKY2/ref=sr_1_8?keywords=compresor+aerografo&qid=1667513398&qu=eyJxc2MiOiI1LjYxIiwicXNhIjoiNC45NSIsInFzcCI6IjQuMjUifQ%3D%3D&sprefix=compresor+aer%2Caps%2C88&sr=8-8"
         }
     ]
 }

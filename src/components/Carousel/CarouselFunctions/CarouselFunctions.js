@@ -27,7 +27,7 @@ export function calculateSlide(scrollLeft, slideNumber, setSlideNumber) {
 }
 function triggerSlide(counter, setSlideNumber, slideNumber) {
     hideAndShowComponents(
-        ".carousel__information__wrapper",
+        ".carousel__information",
         "information-active",
         counter,
         slideNumber
@@ -75,7 +75,7 @@ export function calculatePrices(products, randoms) {
         let key = "carousel__price__" + counter;
         components = components.concat(
             <div className={className} key={key}>
-                {products[randoms[counter]].precio}
+                {products[randoms[counter]].price}
             </div>
         );
         counter++;
@@ -91,7 +91,8 @@ export function calculateInformation(products, randoms) {
                 key={counter}
                 isActive={counter === 0}
                 name={products[randoms[counter]].name}
-                description={products[randoms[counter]].descripcion}
+                description={products[randoms[counter]].description}
+                url={products[randoms[counter]].url}
             />
         );
         counter++;
