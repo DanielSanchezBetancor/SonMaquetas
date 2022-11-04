@@ -50,15 +50,15 @@ function FeaturedProducts() {
     }
     return (
         <section className="featured-products">
-            <label className="labels">Productos destacados</label>
+            <p className="labels">Productos destacados</p>
             <div className="featured-products-list">{featuredProducts}</div>
             <div className="featured-products__more-categories">
-                <label
+                <p
                     className="featured-products__more-categories__link"
                     onClick={loadFeaturedProducts}
                 >
                     Ver mas productos
-                </label>
+                </p>
             </div>
         </section>
     );
