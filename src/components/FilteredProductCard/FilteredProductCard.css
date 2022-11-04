@@ -1,0 +1,36 @@
+.filteredProductCard {
+  background-color: #d09a61;
+  border-radius: 10px;
+  height: 200px;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.filteredProductCard__title {
+  font-weight: bold;
+}
+
+.filteredProductCard__body {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  overflow: auto;
+}
+
+.filteredProductCard__body p {
+  align-self: center;
+}
+
+.filteredProductCard img {
+  width: 40%;
+  border-radius: 10px;
+  float: left;
+  object-fit: contain;
+}
+
+.filteredProductCard {
+  background-color: #d09a61;
+  border-radius: 10px;
+}
