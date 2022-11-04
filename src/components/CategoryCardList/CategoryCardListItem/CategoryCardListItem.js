@@ -1,13 +1,14 @@
-import './CategoryCardListItem.css';
+import { Link } from "react-router-dom";
+import "./CategoryCardListItem.css";
 
-function CategoryCardListItem({name, imgSrc}) {
+function CategoryCardListItem({ name, imgSrc, idCategory }) {
     return (
-        <div className="category-card-list__item">
+        <Link to={(`category/${idCategory}`)} className="category-card-list__item">
             <div className="category-card-list__item__img">
                 <img src={imgSrc} alt="Imagen"></img>
             </div>
-            <label>{name}</label>
-        </div>
+            <p>{name}</p>
+        </Link>
     );
 }
 
