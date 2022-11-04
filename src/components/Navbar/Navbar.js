@@ -4,10 +4,13 @@ import IconMenu from "../../assets/icon-menu.png";
 import IconSearch from "../../assets/icon-search.png";
 import MenuArrowSVG from "../../assets/menu-arrow.svg";
 import { getData } from "../../utils/Utils";
+import FilteredProductCard from "../FilteredProductCard/FilteredProductCard";
 import "./Navbar.css";
 
 function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const [filteredSearchedProducts, setFilteredSearchedProducts] = useState([]);
 
   const data = getData();
   const categories = data.categories;
@@ -77,14 +80,34 @@ function Navbar() {
       ".navbar__search-panel__input"
     );
     if (searchPanel.classList.contains("open")) {
+      setIsSearching(true);
+      setFilteredSearchedProducts([]);
+      document.body.style.overflow = "scroll";
       searchPanel.classList.remove("open");
       searchPaneInput.value = "";
     } else {
+      setIsSearching(false);
+      setFilteredSearchedProducts([]);
+      document.body.style.overflow = "hidden";
       searchPanel.classList.add("open");
       searchPaneInput.autofocus = true;
     }
   }
   //@TODO pasar los alts a constantes y las categorias a componentes unicos. Quizas las funciones tambien.
+
+  function inputSearching(value) {
+    console.log(data.products);
+    console.log(value);
+    const products = data.products.filter((product) => {
+      if (product.name.toLocaleLowerCase().includes(value.toLowerCase()))
+        return product;
+    });
+
+    if (value === " ") setFilteredSearchedProducts([]);
+
+    setFilteredSearchedProducts(products);
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar__menu">
@@ -108,6 +131,24 @@ function Navbar() {
           onClick={openSearch}
         />
       </div>
+      {filteredSearchedProducts.length >= 1 && (
+        <div id="filteredResults__container">
+          <section className="filtered-list">
+            <label className="labels filtered-list__title">Resultados</label>
+            <div className="filteredResult ">
+              {filteredSearchedProducts.map((product) => (
+                <FilteredProductCard
+                  name={product.nombre}
+                  price={product.price}
+                  description={product.description}
+                  image={product.images}
+                  alt={product.alt}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
+      )}
       <div className="navbar__expanded">
         <li>
           {isExpanded &&
@@ -154,13 +195,26 @@ function Navbar() {
         </li>
       </div>
       <div className="navbar__search-panel">
-        <input className="navbar__search-panel__input" type="text"></input>
-        <img
-          className="navbar__search-panel__icon"
-          src={IconSearch}
-          alt="Icono buscador"
-          onClick={openSearch}
-        />
+        <input
+          className="navbar__search-panel__input"
+          type="text"
+          onChange={(e) => inputSearching(e.target.value)}
+        ></input>
+        {isSearching ? (
+          <img
+            className="navbar__search-panel__icon"
+            src={IconSearch}
+            alt="Icono buscador"
+            onClick={openSearch}
+          />
+        ) : (
+          <img
+            src={IconMenu}
+            className="navbar__search-panel__icon"
+            onClick={openSearch}
+            alt="closeSearchingIcon"
+          />
+        )}
       </div>
     </nav>
   );
