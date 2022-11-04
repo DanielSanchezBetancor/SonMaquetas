@@ -96,11 +96,13 @@ function Navbar() {
   //@TODO pasar los alts a constantes y las categorias a componentes unicos. Quizas las funciones tambien.
 
   function inputSearching(value) {
+    console.log(data.products);
+    console.log(value);
     const products = data.products.filter((product) => {
-      if (product.nombre.toLocaleLowerCase().includes(value.toLowerCase()))
+      if (product.name.toLocaleLowerCase().includes(value.toLowerCase()))
         return product;
     });
-    console.log(value);
+
     if (value === " ") setFilteredSearchedProducts([]);
 
     setFilteredSearchedProducts(products);
@@ -137,8 +139,8 @@ function Navbar() {
               {filteredSearchedProducts.map((product) => (
                 <FilteredProductCard
                   name={product.nombre}
-                  price={product.precio}
-                  description={product.descripcion}
+                  price={product.price}
+                  description={product.description}
                   image={product.images}
                   alt={product.alt}
                 />
@@ -214,7 +216,6 @@ function Navbar() {
           />
         )}
       </div>
-      {console.log(filteredSearchedProducts)}
     </nav>
   );
 }
