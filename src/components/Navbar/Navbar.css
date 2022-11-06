@@ -5,6 +5,11 @@
   background-color: #954535;
   align-items: center;
 }
+
+.navbar__menu--searching {
+  height: 50px;
+}
+
 .navbar__menu-icon {
   height: 25px;
   justify-self: center;
@@ -108,10 +113,9 @@
 }
 
 .filteredResult {
-  display: flex;
-  flex-direction: column;
   padding: 1rem;
-  gap: 2rem;
+  overflow: auto;
+  height: 87vh;
 }
 
 .filtered-list {
@@ -121,4 +125,11 @@
 }
 .filtered-list__title {
   margin-left: 2rem;
+}
+
+.navbar__close--icon {
+  width: 25px;
+  position: absolute;
+  top: 12px;
+  right: 16px;
 }
