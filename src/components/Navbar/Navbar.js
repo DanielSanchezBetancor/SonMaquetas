@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ECommerceSVG from "../../assets/E-Commerce.svg";
+import IconClose from "../../assets/icon-close.png";
 import IconMenu from "../../assets/icon-menu.png";
 import IconSearch from "../../assets/icon-search.png";
 import MenuArrowSVG from "../../assets/menu-arrow.svg";
@@ -79,14 +80,15 @@ function Navbar() {
     const searchPaneInput = searchPanel.querySelector(
       ".navbar__search-panel__input"
     );
+
     if (searchPanel.classList.contains("open")) {
-      setIsSearching(true);
+      setIsSearching(!isSearching);
       setFilteredSearchedProducts([]);
       document.body.style.overflow = "scroll";
       searchPanel.classList.remove("open");
       searchPaneInput.value = "";
     } else {
-      setIsSearching(false);
+      setIsSearching(!isSearching);
       setFilteredSearchedProducts([]);
       document.body.style.overflow = "hidden";
       searchPanel.classList.add("open");
@@ -96,8 +98,6 @@ function Navbar() {
   //@TODO pasar los alts a constantes y las categorias a componentes unicos. Quizas las funciones tambien.
 
   function inputSearching(value) {
-    console.log(data.products);
-    console.log(value);
     const products = data.products.filter((product) => {
       if (product.name.toLocaleLowerCase().includes(value.toLowerCase()))
         return product;
@@ -110,7 +110,11 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar__menu">
+      <div
+        className={` ${
+          isSearching ? "navbar__menu--searching" : "navbar__menu"
+        }`}
+      >
         <img
           className="navbar__menu-icon"
           src={IconMenu}
@@ -128,9 +132,10 @@ function Navbar() {
           className="navbar__search-icon"
           src={IconSearch}
           alt="Icono buscador"
-          onClick={openSearch}
+          onClick={() => openSearch()}
         />
       </div>
+
       {filteredSearchedProducts.length >= 1 && (
         <div id="filteredResults__container">
           <section className="filtered-list">
@@ -138,11 +143,12 @@ function Navbar() {
             <div className="filteredResult ">
               {filteredSearchedProducts.map((product) => (
                 <FilteredProductCard
-                  name={product.nombre}
+                  name={product.name}
                   price={product.price}
                   description={product.description}
                   image={product.images}
                   alt={product.alt}
+                  url={product.url}
                 />
               ))}
             </div>
@@ -200,21 +206,12 @@ function Navbar() {
           type="text"
           onChange={(e) => inputSearching(e.target.value)}
         ></input>
-        {isSearching ? (
-          <img
-            className="navbar__search-panel__icon"
-            src={IconSearch}
-            alt="Icono buscador"
-            onClick={openSearch}
-          />
-        ) : (
-          <img
-            src={IconMenu}
-            className="navbar__search-panel__icon"
-            onClick={openSearch}
-            alt="closeSearchingIcon"
-          />
-        )}
+        <img
+          src={IconClose}
+          className="navbar__close--icon"
+          onClick={() => openSearch()}
+          alt="closeSearchingIcon"
+        />
       </div>
     </nav>
   );
