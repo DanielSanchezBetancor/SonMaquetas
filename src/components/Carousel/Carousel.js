@@ -23,22 +23,19 @@ function Carousel() {
     useEffect(() => {
         const data = getData();
         let randoms = calculateRandoms(data.products.length);
-        setItemButtons(calculateButtons(setSlideNumber, getSlideNumber));
+        setItemButtons(calculateButtons(setSlideNumber));
         setPrices(calculatePrices(data.products, randoms));
         setInformation(calculateInformation(data.products, randoms));
         setCarouselImage(calculateImages(data.products, randoms));
 
     }, []);
-    function getSlideNumber() {
-        return slideNumber;
-    }
     return (
         <section className="carousel">
             <div className="carousel__item-button">
                 {itemButtons ? itemButtons : ""}
             </div>
             <div className="carousel__price__wrapper">
-                {prices ? prices : ""}
+                {prices ? prices : ""}€
             </div>
             <div className="carousel__wrapper">
                 <div className="carousel__information-group ">

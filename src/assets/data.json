@@ -4,35 +4,30 @@
             "id": "vehicles",
             "name": "Vehiculos",
             "description": "Los mejores vehiculos para montar",
-            "subcategorias": ["Coches", "Trenes", "Aviones", "Nautica"],
             "images": "https://m.media-amazon.com/images/I/51i-bWaBEGS._AC_SL1000_.jpg"
         },
         {
             "id": "arch",
             "name": "Arquitectura",
             "description": "Construye la casa de tus sueños",
-            "subcategorias": ["Casas", "Monumentos", "Accesorios"],
             "images": "https://m.media-amazon.com/images/I/51Tb96ytJEL._AC_.jpg"
         },
         {
             "id": "period",
             "name": "Épocas",
             "description": "Revive el pasado o imagina como será el futuro",
-            "subcategorias": ["Moderno", "Retro"],
             "images": "https://m.media-amazon.com/images/I/812GOGtqZ1L._AC_SL1500_.jpg"
         },
         {
             "id": "scifi",
             "name": "Sci-Fi",
             "description": "Imaginación sin límites. Universos por explorar",
-            "subcategorias": ["Sci-Fi"],
             "images": "https://m.media-amazon.com/images/I/713rgBjK-JL._AC_SL1500_.jpg"
         },
         {
             "id": "accs",
             "name": "Accesorios",
             "description": "Materiales perfectos para la obra de tus sueños",
-            "subcategorias": ["Accesorios"],
             "images": "https://m.media-amazon.com/images/I/71xaLZplXJL._AC_SL1500_.jpg"
         }
     ],

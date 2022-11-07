@@ -24,3 +24,6 @@
     gap: 1rem;
     text-align: center;
 }
+.featured-product-item__information__price {
+    font-weight: 600;
+}

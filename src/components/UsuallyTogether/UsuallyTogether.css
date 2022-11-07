@@ -17,6 +17,7 @@
 .usually-products__more-categories__link {
   color: #a97b43;
   cursor: pointer;
+  text-decoration: underline;
 }
 .labels {
   border-radius: 15px 15px 0 0;

@@ -44,3 +44,6 @@
 .even {
   background-color: rgb(100, 68, 34, 0.8);
 }
+.usually-products-item__information__price {
+  font-weight: 600;
+}

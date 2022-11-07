@@ -22,11 +22,14 @@ export function calculateSlide(scrollLeft, slideNumber, setSlideNumber) {
 export function triggerSlide(
     setSlideNumber,
     hidingSlideNumber,
-    showingSlideNumber,
-    userScroll = false
+    showingSlideNumber
 ) {
-    if ( typeof hidingSlideNumber === "function") {
-        hidingSlideNumber = hidingSlideNumber();
+    if (hidingSlideNumber === -1) {
+        //Total width determined by user width
+        const sliders = document.querySelector(".carousel__sliders");
+        const totalWidth = sliders.clientWidth * showingSlideNumber;
+        sliders.scrollLeft = totalWidth;
+        return;
     }
     hideAndShowComponents(
         ".carousel__information",
@@ -47,12 +50,6 @@ export function triggerSlide(
         showingSlideNumber
     );
     setSlideNumber(showingSlideNumber);
-    if (userScroll !== true) {
-        //Total width determined by user width
-        const sliders = document.querySelector(".carousel__sliders");
-        const totalWidth = sliders.clientWidth * showingSlideNumber + 50;
-        sliders.marginLeft = totalWidth;
-    }
 }
 function hideAndShowComponents(
     targetClassName,
@@ -80,7 +77,6 @@ export function calculateButtons(setSlideNumber, getSlideNumber) {
                 index={counter}
                 isActive={counter === 0}
                 setSlideNumber={setSlideNumber}
-                realSlideNumber={getSlideNumber}
             />
         );
         counter++;
@@ -96,7 +92,9 @@ export function calculatePrices(products, randoms) {
         let key = "carousel__price__" + counter;
         components = components.concat(
             <div className={className} key={key}>
-                {products[randoms[counter]].price}
+                <p>
+                    {products[randoms[counter]].price}€
+                    </p>
             </div>
         );
         counter++;
