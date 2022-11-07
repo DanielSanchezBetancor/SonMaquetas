@@ -1,8 +1,8 @@
+/* Carousel container, with paddings to not interfere with next relative */
 .carousel {
     background-color: #DCC8B0;
     padding: 1rem 0 4rem;
     position: relative;
-    border-radius: 15px;
 }
 .carousel__wrapper {
     position: relative;
