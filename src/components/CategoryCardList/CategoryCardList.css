@@ -1,11 +1,11 @@
+/* Section container */
 .category-card-list {
-    padding: 1rem 0;
     background-color: #644422;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 15px;
+    background-color: #954535;
+    /* border-radius: 0 0 15px 15px; */
+    padding-bottom: 1rem;
 }
+/* Category cards container */
 .category-card-list__item-list {
     padding: 1rem 0;
     display: flex;
@@ -13,9 +13,8 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-
+/* P tag disguised as link to load more items */
 .category-card-list__more-categories {
-    width: 90%;
     text-align: center;
 }
 .category-card-list__more-categories__link {
@@ -24,4 +23,8 @@
 }
 .category-card-list__more-categories__link:hover {
     cursor: pointer;
+}
+/* Overriding border radius of section title */
+.labels {
+    border-radius: 0 !important;
 }
