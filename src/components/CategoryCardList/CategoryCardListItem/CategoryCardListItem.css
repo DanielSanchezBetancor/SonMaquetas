@@ -1,5 +1,4 @@
 .category-card-list__item {
-    position: relative;
     background-color: #dcc8b0;
     width: 150px;
     height: auto;
@@ -13,7 +12,6 @@
 }
 
 .category-card-list__item__img {
-    /* position: absolute; */
     width: 100px;
     height: 100px;
     top: 10px;
@@ -23,9 +21,3 @@
     height: 100%;
     border-radius: 15px;
 }
-/* .category-card-list__item__img > img {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 10px;
-} */

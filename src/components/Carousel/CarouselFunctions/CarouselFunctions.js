@@ -5,62 +5,83 @@ import CarouselItemButton from "../CarouselItemButton/CarouselItemButton";
 const PRODUCT_LIMIT = 3;
 
 export function calculateSlide(scrollLeft, slideNumber, setSlideNumber) {
-    console.log(scrollLeft);
-    console.log(slideNumber);
     //Total width determined by user width
     const totalWidth = document.querySelector(".carousel__sliders").clientWidth;
     //Adding a little space on right so it doesnt trigger so fast
-    const triggerNextSlideWidth = totalWidth * slideNumber;
-    console.log(triggerNextSlideWidth);
+    const triggerNextSlideWidth = totalWidth * (slideNumber + 1);
     //Adding a little space on left so it doesnt trigger so fast
-    const triggerPreviousSlideWidth = totalWidth * (slideNumber - 1) - 50;
-    console.log(triggerPreviousSlideWidth);
+    const triggerPreviousSlideWidth = totalWidth * slideNumber - 50;
     if (scrollLeft >= triggerNextSlideWidth) {
-        console.log("triggerSlide 1");
-        triggerSlide(1, setSlideNumber, slideNumber);
+        triggerSlide(setSlideNumber, slideNumber, slideNumber + 1, true);
     }
     //iPhones have a weird extra scroll that can trigger this function on the first slide like there was another behind
-    if (slideNumber > 1 && scrollLeft < triggerPreviousSlideWidth) {
-        console.log("triggerSlide 2");
-        triggerSlide(-1, setSlideNumber, slideNumber);
+    if (slideNumber > 0 && scrollLeft < triggerPreviousSlideWidth) {
+        triggerSlide(setSlideNumber, slideNumber, slideNumber - 1, true);
     }
 }
-function triggerSlide(counter, setSlideNumber, slideNumber) {
+export function triggerSlide(
+    setSlideNumber,
+    hidingSlideNumber,
+    showingSlideNumber,
+    userScroll = false
+) {
+    if ( typeof hidingSlideNumber === "function") {
+        hidingSlideNumber = hidingSlideNumber();
+    }
     hideAndShowComponents(
         ".carousel__information",
         "information-active",
-        counter,
-        slideNumber
+        hidingSlideNumber,
+        showingSlideNumber
     );
     hideAndShowComponents(
         ".carousel__item__button",
         "active",
-        counter,
-        slideNumber
+        hidingSlideNumber,
+        showingSlideNumber
     );
-    hideAndShowComponents(".carousel__price", "price-active", counter, slideNumber);
-    setSlideNumber(slideNumber + counter);
+    hideAndShowComponents(
+        ".carousel__price",
+        "price-active",
+        hidingSlideNumber,
+        showingSlideNumber
+    );
+    setSlideNumber(showingSlideNumber);
+    if (userScroll !== true) {
+        //Total width determined by user width
+        const sliders = document.querySelector(".carousel__sliders");
+        const totalWidth = sliders.clientWidth * showingSlideNumber + 50;
+        sliders.marginLeft = totalWidth;
+    }
 }
-function hideAndShowComponents(targetClassName, auxiliarClass, counter, slideNumber) {
-    //We setted slideNumber as 1, but for index we need 0
-    const correctIndex = slideNumber - 1;
+function hideAndShowComponents(
+    targetClassName,
+    auxiliarClass,
+    indexHiding,
+    indexShowing
+) {
     //Selecting all components from the same class
     const componentList = document.querySelectorAll(targetClassName);
     //Removing auxiliar class name from active slide
-    componentList[correctIndex].classList.remove(auxiliarClass);
+    componentList[indexHiding].classList.remove(auxiliarClass);
     //Adding auxiliar class name for next/previous slide
-    componentList[correctIndex + counter].classList.add(auxiliarClass);
+    componentList[indexShowing].classList.add(auxiliarClass);
 }
 /**
  * Checks how many buttons should be on the carousel based on the limit set in this class
  * @returns {object} Array of Item Buttons
  */
-export function calculateButtons(setSlideNumber) {
+export function calculateButtons(setSlideNumber, getSlideNumber) {
     let components = [];
     let counter = 0;
     while (counter < PRODUCT_LIMIT) {
         components = components.concat(
-            <CarouselItemButton index={counter} isActive={counter === 0} setSlideNumber={setSlideNumber}/>
+            <CarouselItemButton
+                index={counter}
+                isActive={counter === 0}
+                setSlideNumber={setSlideNumber}
+                realSlideNumber={getSlideNumber}
+            />
         );
         counter++;
     }

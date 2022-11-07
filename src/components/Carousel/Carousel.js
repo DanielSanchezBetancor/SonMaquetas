@@ -12,7 +12,7 @@ import "./Carousel.css";
 import ImgBackground from "../../assets/My path.svg";
 
 function Carousel() {
-    const [slideNumber, setSlideNumber] = useState(1);
+    const [slideNumber, setSlideNumber] = useState(0);
     const [itemButtons, setItemButtons] = useState(false);
     const [prices, setPrices] = useState(false);
     const [information, setInformation] = useState(false);
@@ -23,13 +23,15 @@ function Carousel() {
     useEffect(() => {
         const data = getData();
         let randoms = calculateRandoms(data.products.length);
-        setItemButtons(calculateButtons(setSlideNumber));
+        setItemButtons(calculateButtons(setSlideNumber, getSlideNumber));
         setPrices(calculatePrices(data.products, randoms));
         setInformation(calculateInformation(data.products, randoms));
         setCarouselImage(calculateImages(data.products, randoms));
 
     }, []);
-
+    function getSlideNumber() {
+        return slideNumber;
+    }
     return (
         <section className="carousel">
             <div className="carousel__item-button">
