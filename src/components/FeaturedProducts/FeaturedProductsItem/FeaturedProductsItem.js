@@ -8,11 +8,11 @@ function FeaturedProductsItem({imgSrc, imgAlt, name, description, price}) {
                 <img src={imgSrc} alt={imgAlt} />
             </div>
             <div className="featured-products-item__information">
-                <label className="featured-products-item__information__title">
+                <p className="featured-products-item__information__title">
                     {name}
-                </label>
-                <label>{description}</label>
-                <label>{price}</label>
+                </p>
+                <p>{description}</p>
+                <p className="featured-product-item__information__price">{price}€</p>
             </div>
         </div>
     );
