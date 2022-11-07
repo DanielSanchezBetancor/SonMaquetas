@@ -1,9 +1,9 @@
 .navbar__menu {
   height: 75px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   background-color: #954535;
   align-items: center;
+  justify-content: space-around;
 }
 
 .navbar__menu--searching {
