@@ -56,15 +56,15 @@ function UsuallyTogether() {
 
     return (
         <section className="usually-products">
-            <label className="labels">Juntos habitualmente</label>
+            <p className="labels">Juntos habitualmente</p>
             <div className="usually-products-list">{usuallyProducts}</div>
             <div className="usually-products__more-categories">
-                <label
+                <p
                     className="usually-products__more-categories__link"
                     onClick={loadUsuallyProducts}
                 >
                     Ver mas productos
-                </label>
+                </p>
             </div>
         </section>
     );
