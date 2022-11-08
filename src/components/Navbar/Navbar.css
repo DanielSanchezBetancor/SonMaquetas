@@ -21,11 +21,11 @@
 /* Search icon */
 .navbar__search-icon {
   height: 25px;
-  position:absolute;
+  position: absolute;
   right: 1rem;
 }
 .navbar__search-panel {
-  visibility: hidden;
+  /* visibility: hidden; */
   z-index: 999;
   height: 0;
 }
@@ -61,7 +61,7 @@
   visibility: visible;
   position: absolute;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.359);
+  background-color: #f6f6f6;
   width: 100vw;
   height: 100%;
   transition: all 0.2s ease-in;
@@ -85,11 +85,13 @@
 
 .filtered-list {
   padding: 1rem 0;
-  background-color: #644422;
+  background-color: #954535;
   border-radius: 15px;
 }
 .filtered-list__title {
   margin-left: 2rem;
+
+  padding: 0;
 }
 
 .navbar__close--icon {
