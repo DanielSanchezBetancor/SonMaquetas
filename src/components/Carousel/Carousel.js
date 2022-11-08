@@ -35,7 +35,7 @@ function Carousel() {
                 {itemButtons ? itemButtons : ""}
             </div>
             <div className="carousel__price__wrapper">
-                {prices ? prices : ""}€
+                {prices ? prices : ""}
             </div>
             <div className="carousel__wrapper">
                 <div className="carousel__information-group ">
