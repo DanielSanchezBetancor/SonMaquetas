@@ -11,3 +11,41 @@
     opacity: 0.9;
     border-radius: 15px;
 }
+@media (min-width: 376px) {
+    .carousel__image {
+        margin-right: 15%;
+    }
+}
+/* Pre reducing content width */
+@media (min-width: 540px) {
+    .carousel__image {
+        margin-left: 50%;
+        margin-right: 25%;
+    }
+}
+/* Pre reducing content width 2º degree */
+@media (min-width: 768px) {
+    .carousel__image {
+        margin-left: 63%;
+        margin-right: 18%;
+    }
+}
+/* After reducing content width */
+@media (min-width: 800px) {
+    .carousel__image {
+        margin-left: 55%;
+        margin-right: 20%;
+    }
+}
+/* After reducing content width 2º degree */
+@media (min-width: 1024px) {
+    .carousel__image {
+        margin-left: 60%;
+    }
+}
+/* After reducing content width 3º degree*/
+@media (min-width: 1200px) {
+    .carousel__image {
+        margin-left: 65%;
+    }
+}
