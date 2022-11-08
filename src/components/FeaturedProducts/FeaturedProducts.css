@@ -1,20 +1,21 @@
 .featured-products {
-    background-color: #954535;
-    padding-bottom: 1rem;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
+  background-color: #954535;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .featured-products-list {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 0;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  gap: 5px;
 }
 .featured-products__more-categories {
-    text-align: center;
+  text-align: center;
 }
 .featured-products__more-categories__link {
-    color: #A97B43;
-    text-decoration: underline;
+  color: #a97b43;
+  text-decoration: underline;
+  cursor: pointer;
 }
