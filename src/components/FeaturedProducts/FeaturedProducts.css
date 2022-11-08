@@ -1,7 +1,6 @@
 .featured-products {
-  background-color: #644422;
-  padding: 1rem 0;
-  border-radius: 15px;
+  background-color: #954535;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,5 +16,6 @@
 }
 .featured-products__more-categories__link {
   color: #a97b43;
+  text-decoration: underline;
   cursor: pointer;
 }

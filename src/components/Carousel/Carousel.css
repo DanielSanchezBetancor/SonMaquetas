@@ -1,9 +1,10 @@
+/* Carousel container, with paddings to not interfere with next relative */
 .carousel {
     background-color: #DCC8B0;
     padding: 1rem 0 4rem;
     position: relative;
-    border-radius: 15px;
 }
+
 .carousel__wrapper {
     position: relative;
     height: 200px;
@@ -16,21 +17,21 @@
     display: flex;
     justify-content: space-around;
 }
-
+/* Price container */
 .carousel__price__wrapper {
     position: absolute;
-    width: 25%;
     right: 20%;
-    bottom: 13%;
+    bottom: 5%;
     visibility: hidden;
     font-size: 1.25rem;
     font-weight: 700;
-    text-align: center;
 }
+/* Hidden price untill slide active */
 .carousel__price {
     width: 0;
     height: 0;
 }
+/* Price shown in the active slide */
 .price-active  {
     width: auto;
     height: auto;
@@ -44,7 +45,9 @@
     position: absolute;
     padding-top: 2rem;
 }
-
+.carousel__sliders::-webkit-scrollbar {
+    display: none;
+}
 /* Floaty text */
 .carousel__information-group {
     width: 40%;

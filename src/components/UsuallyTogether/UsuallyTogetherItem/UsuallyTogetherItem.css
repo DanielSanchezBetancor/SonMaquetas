@@ -18,7 +18,7 @@
 .usually-products-item {
   display: flex;
   gap: 5px;
-  background-color: #a97b43;
+  background-color: #DCC8B0;
   align-items: center;
   border-radius: 15px;
   padding: 0.5rem 0;
@@ -43,4 +43,7 @@
 }
 .even {
   background-color: rgb(100, 68, 34, 0.8);
+}
+.usually-products-item__information__price {
+  font-weight: 600;
 }

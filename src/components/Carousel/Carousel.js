@@ -12,7 +12,7 @@ import "./Carousel.css";
 import ImgBackground from "../../assets/My path.svg";
 
 function Carousel() {
-    const [slideNumber, setSlideNumber] = useState(1);
+    const [slideNumber, setSlideNumber] = useState(0);
     const [itemButtons, setItemButtons] = useState(false);
     const [prices, setPrices] = useState(false);
     const [information, setInformation] = useState(false);
@@ -29,14 +29,13 @@ function Carousel() {
         setCarouselImage(calculateImages(data.products, randoms));
 
     }, []);
-
     return (
         <section className="carousel">
             <div className="carousel__item-button">
                 {itemButtons ? itemButtons : ""}
             </div>
             <div className="carousel__price__wrapper">
-                {prices ? prices : ""}
+                {prices ? prices : ""}€
             </div>
             <div className="carousel__wrapper">
                 <div className="carousel__information-group ">

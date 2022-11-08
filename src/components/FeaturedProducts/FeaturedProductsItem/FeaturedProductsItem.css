@@ -1,7 +1,7 @@
 .featured-products-item {
     display: flex;
     gap: 5px;
-    background-color: #A97B43;
+    background-color: #DCC8B0;
     align-items: center;
     border-radius: 15px;
     padding: 0.5rem 0;
@@ -24,6 +24,6 @@
     gap: 1rem;
     text-align: center;
 }
-.featured-even {
-    background-color: #DCC8B0;
+.featured-product-item__information__price {
+    font-weight: 600;
 }
