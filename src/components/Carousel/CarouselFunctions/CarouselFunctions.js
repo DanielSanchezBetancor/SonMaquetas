@@ -6,11 +6,12 @@ const PRODUCT_LIMIT = 3;
 
 export function calculateSlide(scrollLeft, slideNumber, setSlideNumber) {
     //Total width determined by user width
-    const totalWidth = document.querySelector(".carousel__sliders").clientWidth;
+    const totalWidth = document.querySelector(".carousel__sliders").scrollWidth / 3;
     //Adding a little space on right so it doesnt trigger so fast
-    const triggerNextSlideWidth = totalWidth * (slideNumber + 1);
+    const triggerNextSlideWidth = totalWidth * (slideNumber + 1) - 50;
     //Adding a little space on left so it doesnt trigger so fast
-    const triggerPreviousSlideWidth = totalWidth * slideNumber - 50;
+    const triggerPreviousSlideWidth = totalWidth * slideNumber -50;
+    console.log(scrollLeft, triggerNextSlideWidth);
     if (scrollLeft >= triggerNextSlideWidth) {
         triggerSlide(setSlideNumber, slideNumber, slideNumber + 1, true);
     }
@@ -26,9 +27,9 @@ export function triggerSlide(
 ) {
     if (hidingSlideNumber === -1) {
         //Total width determined by user width
-        const sliders = document.querySelector(".carousel__sliders");
-        const totalWidth = sliders.clientWidth * showingSlideNumber;
-        sliders.scrollLeft = totalWidth;
+        // const sliders = document.querySelector(".carousel__sliders");
+        const totalWidth =  (document.querySelector(".carousel__sliders").scrollWidth / 3) * showingSlideNumber;
+        document.querySelector(".carousel__sliders").scrollLeft = totalWidth;
         return;
     }
     hideAndShowComponents(
