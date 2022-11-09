@@ -36,7 +36,6 @@ function UsuallyTogether() {
       if (i < packs.length) {
         components = components.concat(
           <UsuallyTogetherItem
-            isEven={i % 2 === 0}
             imgSrcFirstProduct={packs[i]["first_image"].images}
             imgSrcSecondProduct={packs[i]["second_image"].images}
             nameFirstProduct={packs[i]["first_image"].name}
@@ -52,11 +51,10 @@ function UsuallyTogether() {
   function loadUsuallyProducts() {
     let components = usuallyProducts;
     //Starting on last index + 1, adding NEW_IMG_LIMIT components if exists
-    for (let i = counter; i < counter + 1 + NEW_IMG_LIMIT; i++) {
+    for (let i = counter; i < counter + NEW_IMG_LIMIT; i++) {
       if (i < packs.length) {
         components = components.concat(
           <UsuallyTogetherItem
-            isEven={i % 2 === 0}
             imgSrcFirstProduct={packs[i]["first_image"].images}
             imgSrcSecondProduct={packs[i]["second_image"].images}
             nameFirstProduct={packs[i]["first_image"].name}
