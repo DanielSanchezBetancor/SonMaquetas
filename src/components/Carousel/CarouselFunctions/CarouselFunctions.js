@@ -1,16 +1,17 @@
 import CarouselImage from "../CarouselImage/CarouselImage";
 import CarouselInformation from "../CarouselInformation/CarouselInformation";
 import CarouselItemButton from "../CarouselItemButton/CarouselItemButton";
-
+import ArrowButton from "../../../assets/menu-arrow.svg";
 const PRODUCT_LIMIT = 3;
 
 export function calculateSlide(scrollLeft, slideNumber, setSlideNumber) {
     //Total width determined by user width
-    const totalWidth = document.querySelector(".carousel__sliders").scrollWidth / 3;
+    const totalWidth =
+        document.querySelector(".carousel__sliders").scrollWidth / 3;
     //Adding a little space on right so it doesnt trigger so fast
     const triggerNextSlideWidth = totalWidth * (slideNumber + 1) - 50;
     //Adding a little space on left so it doesnt trigger so fast
-    const triggerPreviousSlideWidth = totalWidth * slideNumber -50;
+    const triggerPreviousSlideWidth = totalWidth * slideNumber - 50;
     console.log(scrollLeft, triggerNextSlideWidth);
     if (scrollLeft >= triggerNextSlideWidth) {
         triggerSlide(setSlideNumber, slideNumber, slideNumber + 1, true);
@@ -25,10 +26,27 @@ export function triggerSlide(
     hidingSlideNumber,
     showingSlideNumber
 ) {
+    //Since I cant get a way to get the refreshed value from the carousel slide number, lets try this
     if (hidingSlideNumber === -1) {
+        //In this scenario, we dont have any refreshed value and not a targeted slide (forwards or backwards)
+        if (typeof showingSlideNumber === "string") {
+            let itemWidth =
+                document.querySelector(".carousel__sliders").scrollWidth / 3;
+            let modifier = -1;
+            if (showingSlideNumber === "add") {
+                modifier = 1;
+            }
+            let nextSlideMarginLeft =
+                document.querySelector(".carousel__sliders").scrollLeft +
+                    modifier * (itemWidth);
+            if (nextSlideMarginLeft !== 0) {
+                showingSlideNumber = nextSlideMarginLeft / itemWidth;
+            }
+        }
         //Total width determined by user width
-        // const sliders = document.querySelector(".carousel__sliders");
-        const totalWidth =  (document.querySelector(".carousel__sliders").scrollWidth / 3) * showingSlideNumber;
+        const totalWidth =
+            (document.querySelector(".carousel__sliders").scrollWidth / 3) *
+            showingSlideNumber;
         document.querySelector(".carousel__sliders").scrollLeft = totalWidth;
         return;
     }
@@ -84,6 +102,26 @@ export function calculateButtons(setSlideNumber, getSlideNumber) {
     }
     return components;
 }
+export function calculateArrowButtons(setSlideNumber) {
+    let components = [];
+    components = components.concat(
+        <img
+            src={ArrowButton}
+            className="carousel__arrow__button"
+            onClick={() => triggerSlide(setSlideNumber, -1, "substract")}
+            alt=""
+        />
+    );
+    components = components.concat(
+        <img
+            src={ArrowButton}
+            className="carousel__arrow__button reverted"
+            onClick={() => triggerSlide(setSlideNumber, -1, "add")}
+            alt=""
+        />
+    );
+    return components;
+}
 export function calculatePrices(products, randoms) {
     let components = [];
     let counter = 0;
@@ -93,9 +131,7 @@ export function calculatePrices(products, randoms) {
         let key = "carousel__price__" + counter;
         components = components.concat(
             <div className={className} key={key}>
-                <p>
-                    {products[randoms[counter]].price}€
-                    </p>
+                <p>{products[randoms[counter]].price}€</p>
             </div>
         );
         counter++;

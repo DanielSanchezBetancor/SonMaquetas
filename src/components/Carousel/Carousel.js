@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getData } from "../../utils/Utils";
 import {
     calculateButtons,
+    calculateArrowButtons,
     calculatePrices,
     calculateInformation,
     calculateImages,
@@ -17,6 +18,7 @@ function Carousel() {
     const [prices, setPrices] = useState(false);
     const [information, setInformation] = useState(false);
     const [carouselImage, setCarouselImage] = useState(false);
+    const [arrowButtons, setArrowButtons] = useState(false);
     function onScroll(event) {
         calculateSlide(event.target.scrollLeft, slideNumber, setSlideNumber);
     }
@@ -24,6 +26,7 @@ function Carousel() {
         const data = getData();
         let randoms = calculateRandoms(data.products.length);
         setItemButtons(calculateButtons(setSlideNumber));
+        setArrowButtons(calculateArrowButtons(setSlideNumber, slideNumber));
         setPrices(calculatePrices(data.products, randoms));
         setInformation(calculateInformation(data.products, randoms));
         setCarouselImage(calculateImages(data.products, randoms));
@@ -33,6 +36,9 @@ function Carousel() {
         <section className="carousel">
             <div className="carousel__item-button">
                 {itemButtons ? itemButtons : ""}
+            </div>
+            <div className="carousel__item-arrows">
+                {arrowButtons ? arrowButtons : ""}
             </div>
             <div className="carousel__price__wrapper">
                 {prices ? prices : ""}

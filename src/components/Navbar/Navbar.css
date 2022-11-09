@@ -101,3 +101,15 @@
   top: 12px;
   right: 16px;
 }
+@media (min-width: 800px) {
+  /* Search icon */
+  .navbar__search-icon {
+    right: 15%;
+  }
+}
+@media (min-width: 1500px) {
+  /* Search icon */
+  .navbar__search-icon {
+    right: 26%;
+  }
+}
