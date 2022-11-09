@@ -66,7 +66,7 @@ function FeaturedProducts() {
 
   function showLessFeaturedProducts() {
     if (featuredProducts.length > 3) {
-      setFeaturedProducts(featuredProducts.slice(0, 3));
+      setFeaturedProducts(setDefaults());
       setShowMoreFeaturedProducts(!showMoreFeaturedProducts);
       setCounter(DEFAULT_IMG_LIMIT);
     }

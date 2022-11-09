@@ -8,7 +8,7 @@
 .featured-products-list {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 1rem;
   gap: 5px;
 }
 .featured-products__more-categories {
