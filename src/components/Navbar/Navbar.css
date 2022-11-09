@@ -5,6 +5,7 @@
   background-color: #954535;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
 }
 /* Logo wrapper as A tag */
 .navbar__logo__link {

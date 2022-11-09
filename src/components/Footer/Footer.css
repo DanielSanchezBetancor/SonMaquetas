@@ -1,16 +1,17 @@
 .footer {
-    background-color: #954535;
-    padding: 1rem 0;
+  background-color: #954535;
+  padding: 1rem 0;
+  border: 1px solid black;
 }
 /* Revert to unset global padding and let it show the bullets from the unordered list */
 .footer__list {
-    padding: revert;
+  padding: revert;
 }
 .footer__list li {
-    color: rgba(255, 255, 255, 0.8);
-    list-style-type: square;
-    padding: 8px 0;
+  color: rgba(255, 255, 255, 0.8);
+  list-style-type: square;
+  padding: 8px 0;
 }
 .footer__list li::marker {
-    color: #C29F74;
+  color: #c29f74;
 }
