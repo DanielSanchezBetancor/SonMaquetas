@@ -1,7 +1,6 @@
 import "./UsuallyTogetherItem.css";
 
 function UsuallyTogetherItem({
-    isEven,
     imgSrcFirstProduct,
     imgSrcSecondProduct,
     nameFirstProduct,
