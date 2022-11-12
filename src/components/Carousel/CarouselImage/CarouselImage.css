@@ -49,3 +49,9 @@
         margin-left: 65%;
     }
 }
+/*  Safari hack */
+@media not all and (min-resolution:.001dpcm) {
+    .carousel__image:last-child {
+        padding-right: 50%;
+    }
+}
