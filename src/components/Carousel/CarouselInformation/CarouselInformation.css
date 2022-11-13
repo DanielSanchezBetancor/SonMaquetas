@@ -34,3 +34,6 @@
     height: initial;
     visibility: visible;
 }
+.carousel__information > h1 {
+    font-size: 1rem;
+}
