@@ -49,3 +49,10 @@
 .usually-products-item__information__price {
   font-weight: 600;
 }
+
+@media (max-width: 400px) {
+  .usually-products-item__information {
+    gap: 0;
+    overflow: hidden;
+  }
+}
